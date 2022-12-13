@@ -17,12 +17,14 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap ;
+    margin-bottom: 3%;
   }
   
  #header-text {
       font-size: 300%;
       font-weight: bolder;
   }
+
 
   .emp-title {
     background-color: var(--secondary);
