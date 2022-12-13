@@ -1,6 +1,6 @@
 :root {
     --primary: #0c2340;
-    --secondary: #f15a22
+    --secondary: #f15a22;
 }
 
 * {
@@ -29,4 +29,10 @@
   .emp-title {
     background-color: var(--secondary);
     color: var(--primary);
+}
+
+.emp-card{
+    border-radius: 2em;
+    box-shadow: 10px 10px 5px 5px var(--primary);
+
 }
