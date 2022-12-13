@@ -1,3 +1,8 @@
+:root {
+    --primary: #0c2340;
+    --secondary: #f15a22
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -5,8 +10,8 @@
   }
 
   .header {
-    background-color: #034788;
-    color: white;
+    background-color: var(--primary);
+    color: var(--secondary);
     padding: 3%;
     border-bottom: 3px solid black;
     display: flex;
@@ -16,4 +21,10 @@
   
  #header-text {
       font-size: 300%;
+      font-weight: bolder;
   }
+
+  .emp-title {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
