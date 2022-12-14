@@ -7,7 +7,7 @@ const Manager = require (`./lib/manager`);
 
 
 // Create an array of questions for user input using inquirer prompt. Again went back to prev homework on readme generator for guidance. 
-const generateHTML = () => 
+const generateHTML = ({mgrname, mgremail, mgrid, mgroffice}) => 
 
 `<!DOCTYPE html>
 <html lang="en">
@@ -20,30 +20,30 @@ const generateHTML = () =>
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./dist/style.css" />
     <title>Team Profile Generator</title>
   </head>
   <body>
     <header class="header">
-      <h1 id="header-text"></h1>
+      <h1 id="header-text">My Team</h1>
     </header>
     <div class="container">
       <div class="row">
         <div class="col s12 m4 l4">
           <div class="card emp-card">
             <div class="card-content emp-title">
-              <span class="card-title emp-name"></span>
+              <span class="card-title emp-name">${mgrname}</span>
               <ul>
                 <li id="emp-pos"></li>
               </ul>
             </div>
             <div class="card-action emp-info">
               <ul class="collection">
-                <li class="collection-item"></li>
-                <li class="collection-item">
+                <li class="collection-item">Employee ID: ${mgrid}</li>
+                <li class="collection-item">Email: <a href="${mgremail}">${mgremail}</a>
                   
                 </li>
-                <li class="collection-item"></li>
+                <li class="collection-item">Office Number: ${mgroffice}</li>
               </ul>
             </div>
           </div>
@@ -82,10 +82,17 @@ inquirer
             message: `What is the team manager's office number? `,
             validate: (data) => { if (data) { return true } else { return 'You must enter information to continue' } }
         },
-        {
-            type: `list`,
-            name: `menu`,
-            message: `From the options listed below, please choose how to proceed `,
-            choices: ['Add an engineer', 'Add an intern', 'Finish building my team']
-        }
-    ]);
+        // {
+        //     type: `list`,
+        //     name: `menu`,
+        //     message: `From the options listed below, please choose how to proceed `,
+        //     choices: ['Add an engineer', 'Add an intern', 'Finish building my team']
+        // }
+    ])
+
+    // see if i can create just 1 mgr card to start
+    .then((answers) => {
+        const managerContent = generateHTML(answers);
+
+        fs.writeFile('index.html', managerContent, "UTF-8", (err) => err ? console.log(err) : console.log('Successfully created HTML file'));
+    });
