@@ -13,3 +13,15 @@ it(`should display name, id, email when called using this.`, () => {
     expect(newEmployee.email).toEqual('hunter@testemail.com');
 }
 );
+
+it(`should be able to get name from the getName() method name should be hunter`, () => {
+    expect(newEmployee.getName()).toEqual('Hunter');
+});
+
+it(`should be able to get id from the getId() method id should be 123456` , () => {
+    expect(newEmployee.getId()).toEqual(123456);
+});
+
+it(`should be able to get email from getEmail() method email should be hunter@testemail.com` , () => {
+    expect(newEmployee.getEmail()).toEqual('hunter@testemail.com');
+});
