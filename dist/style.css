@@ -26,13 +26,31 @@
   }
 
 
+
+.card .card-content .card-title {
+    display: block;
+    line-height: 32px;
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-weight: bolder;
+}
   .emp-title {
     background-color: var(--secondary);
     color: var(--primary);
+    border: 3px solid var(--primary);
+}
+
+#emp-pos {
+  font-size: 14px;
+  font-weight: bolder;
 }
 
 .emp-card{
     border-radius: 2em;
     box-shadow: 10px 10px 5px 5px var(--primary);
 
+}
+
+.card .card-action {
+  background-color: #f0f0f0;
 }
