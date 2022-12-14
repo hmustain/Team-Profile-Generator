@@ -27,7 +27,7 @@ it(`should be able to get email from getEmail() method email should be hunter@te
 });
 
 it(`should be able to get school from getschool() method. school should be the university of arkansas` , () => {
-    expect(newIntern.getOfficeNumber()).toEqual('The University of Arkansas');
+    expect(newIntern.getSchool()).toEqual('The University of Arkansas');
 });
 
 it(`should be able to get the employees role using the getRole() in this case it should be intern` , () => {
