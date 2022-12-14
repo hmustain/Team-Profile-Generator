@@ -25,3 +25,7 @@ it(`should be able to get id from the getId() method id should be 123456` , () =
 it(`should be able to get email from getEmail() method email should be hunter@testemail.com` , () => {
     expect(newEmployee.getEmail()).toEqual('hunter@testemail.com');
 });
+
+it(`should be able to get the employees role using the getRole() in this case it should be employee` , () => {
+    expect(newEmployee.getRole()).toEqual('Employee');
+});
