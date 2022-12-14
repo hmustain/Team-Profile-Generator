@@ -57,11 +57,11 @@ const generateHTML = () =>
 
 // use inquirer prompt to come up with a series of questions to ask user
 inquirer
-    .createPromptModule([
+    .prompt([
         {
             type: `input`,
             name: `empname`,
-            message: `What is the employees first and last name `,
+            message: `What is the employees First and Last name? `,
             validate: (data) => { if (data) { return true } else { return 'You must enter information to continue' } }
         }
-    ])
+    ]);
