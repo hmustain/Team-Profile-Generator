@@ -1,9 +1,9 @@
 // Include packages needed for this application. Went back to prev readme generator homework for guidance
 const inquirer = require(`inquirer`);
 const fs = require (`fs`);
-
-
-
+const Engineer = require (`./lib/engineer`);
+const Intern = require (`./lib/intern`);
+const Manager = require (`./lib/manager`);
 
 
 // Create an array of questions for user input using inquirer prompt. Again went back to prev homework on readme generator for guidance. 
@@ -60,8 +60,32 @@ inquirer
     .prompt([
         {
             type: `input`,
-            name: `empname`,
-            message: `What is the employees First and Last name? `,
+            name: `mgrname`,
+            message: `What is the team manager's name? `,
             validate: (data) => { if (data) { return true } else { return 'You must enter information to continue' } }
+        },
+        {
+            type: `input`,
+            name: `mgrid`,
+            message: `What is the team manager's employee id #? `,
+            validate: (data) => { if (data) { return true } else { return 'You must enter information to continue' } }
+        },
+        {
+            type: `input`,
+            name: `mgremail`,
+            message: `What is the team manager's email address? `,
+            validate: (data) => { if (data) { return true } else { return 'You must enter information to continue' } }
+        },
+        {
+            type: `input`,
+            name: `mgroffice`,
+            message: `What is the team manager's office number? `,
+            validate: (data) => { if (data) { return true } else { return 'You must enter information to continue' } }
+        },
+        {
+            type: `list`,
+            name: `menu`,
+            message: `From the options listed below, please choose how to proceed `,
+            choices: ['Add an engineer', 'Add an intern', 'Finish building my team']
         }
     ]);
