@@ -12,13 +12,13 @@ const newHire = [];
 function employeeCards (employee){
     let extraInfo = ""
     if (employee.getRole() === "Manager") {
-        extraInfo += "Office Number:" + employee.officenumber
+        extraInfo += "Office Number: " + employee.officenumber
     }
     else if (employee.getRole() === "Engineer") {
-        extraInfo += "GitHub User Name:" + employee.gitHub
+        extraInfo += "GitHub User: " + employee.gitHub
     }
     else if (employee.getRole() === "Intern") {
-        extraInfo += "School:" + employee.school
+        extraInfo += "School: " + employee.school
     }
     return `        <div class="col s12 m4 l4">
     <div class="card emp-card">
@@ -30,7 +30,7 @@ function employeeCards (employee){
       </div>
       <div class="card-action emp-info">
         <ul class="collection">
-          <li class="collection-item">Employee ID: ${employee.getId()}</li>
+          <li class="collection-item">ID: ${employee.getId()}</li>
           <li class="collection-item">Email: <a href="">${employee.getEmail()}</a>
             
           </li>
