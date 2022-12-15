@@ -31,7 +31,7 @@ function employeeCards(employee) {
       <div class="card-action emp-info">
         <ul class="collection">
           <li class="collection-item">ID: ${employee.getId()}</li>
-          <li class="collection-item">Email: <a href="">${employee.getEmail()}</a>
+          <li class="collection-item">Email: <a href="mailto:${employee.getEmail()}">${employee.getEmail()}</a>
             
           </li>
           <li class="collection-item">${extraInfo}</li>
