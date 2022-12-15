@@ -4,11 +4,11 @@ const fs = require(`fs`);
 const Engineer = require(`./lib/engineer`);
 const Intern = require(`./lib/intern`);
 const Manager = require(`./lib/manager`);
-// const { newEmployee } = require ("./src/generateHTML");
 
+// Empty array for newHire
 const newHire = [];
 
-// function for cards
+// function for cards <--- tutor helped me big time here
 function employeeCards (employee){
     let extraInfo = ""
     if (employee.getRole() === "Manager") {
