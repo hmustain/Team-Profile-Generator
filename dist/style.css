@@ -1,43 +1,48 @@
 :root {
-    --primary: #0c2340;
-    --secondary: #f15a22;
+  --primary: #0c2340;
+  --secondary: #f15a22;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: 0;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
 
-  .header {
-    background-color: var(--primary);
-    color: var(--secondary);
-    padding: 3%;
-    border-bottom: 3px solid black;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap ;
-    margin-bottom: 3%;
-  }
-  
- #header-text {
-      font-size: 300%;
-      font-weight: bolder;
-  }
+.header {
+  /* background-color: var(--primary); */
+  background: rgb(12, 35, 64);
+  background: radial-gradient(circle, rgba(12, 35, 64, 1) 45%, rgba(241, 90, 34, 1) 85%);
+  color: var(--secondary);
+  padding: 3%;
+  border-bottom: 3px solid black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3%;
+}
+
+#header-text {
+  font-size: 300%;
+  font-weight: bolder;
+}
 
 
 
 .card .card-content .card-title {
-    display: block;
-    line-height: 32px;
-    margin-bottom: 8px;
-    font-size: 32px;
-    font-weight: bolder;
+  display: block;
+  line-height: 32px;
+  margin-bottom: 8px;
+  font-size: 32px;
+  font-weight: bolder;
 }
-  .emp-title {
-    background-color: var(--secondary);
-    color: var(--primary);
-    border: 3px solid var(--primary);
+
+.emp-title {
+  /* background-color: var(--secondary); */
+  background: rgb(241,90,34);
+  background: linear-gradient(90deg, rgba(241,90,34,1) 40%, rgba(12,35,64,1) 70%);
+  color: var(--primary);
+  border: 3px solid var(--primary);
 }
 
 #emp-pos {
@@ -45,9 +50,9 @@
   font-weight: bolder;
 }
 
-.emp-card{
-    border-radius: 2em;
-    box-shadow: 10px 10px 5px 5px var(--primary);
+.emp-card {
+  border-radius: 2em;
+  box-shadow: 10px 10px 5px 5px var(--primary);
 
 }
 
