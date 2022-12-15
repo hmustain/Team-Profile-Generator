@@ -38,9 +38,7 @@
 }
 
 .emp-title {
-  /* background-color: var(--secondary); */
-  background: rgb(241,90,34);
-  background: linear-gradient(90deg, rgba(241,90,34,1) 40%, rgba(12,35,64,1) 70%);
+  background-color: var(--secondary);
   color: var(--primary);
   border: 3px solid var(--primary);
 }

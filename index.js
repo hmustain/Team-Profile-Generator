@@ -9,16 +9,16 @@ const Manager = require(`./lib/manager`);
 const newHire = [];
 
 // function for cards <--- tutor helped me big time here
-function employeeCards (employee){
+function employeeCards(employee) {
     let extraInfo = ""
     if (employee.getRole() === "Manager") {
-        extraInfo += "Office Number:" + employee.officenumber
+        extraInfo += "Office Number: " + employee.officeNumber
     }
     else if (employee.getRole() === "Engineer") {
-        extraInfo += "GitHub User Name:" + employee.gitHub
+        extraInfo += `GitHub User: <a href="https://www.github.com/${employee.gitHub}">${employee.gitHub}</a>`
     }
     else if (employee.getRole() === "Intern") {
-        extraInfo += "School:" + employee.school
+        extraInfo += "School: " + employee.school
     }
     return `        <div class="col s12 m4 l4">
     <div class="card emp-card">
@@ -30,7 +30,7 @@ function employeeCards (employee){
       </div>
       <div class="card-action emp-info">
         <ul class="collection">
-          <li class="collection-item">Employee ID: ${employee.getId()}</li>
+          <li class="collection-item">ID: ${employee.getId()}</li>
           <li class="collection-item">Email: <a href="">${employee.getEmail()}</a>
             
           </li>
@@ -56,7 +56,7 @@ const generateHTML = () => {
             cards += employeeCards(newHire[i])
         }
     }
-  return `<!DOCTYPE html>
+    return `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -86,230 +86,230 @@ const generateHTML = () => {
 }
 // use inquirer prompt to come up with a series of questions to ask user
 inquirer
-  .prompt([
-    {
-      type: `input`,
-      name: `mgrname`,
-      message: `What is your name? `,
-      validate: (data) => {
-        if (data) {
-          return true;
-        } else {
-          return "You must enter information to continue";
-        }
-      },
-    },
-    {
-      type: `input`,
-      name: `mgrid`,
-      message: `What is your id#? `,
-      validate: (data) => {
-        if (data) {
-          return true;
-        } else {
-          return "You must enter information to continue";
-        }
-      },
-    },
-    {
-      type: `input`,
-      name: `mgremail`,
-      message: `What is your email address? `,
-      validate: (data) => {
-        if (data) {
-          return true;
-        } else {
-          return "You must enter information to continue";
-        }
-      },
-    },
-    {
-      type: `input`,
-      name: `officenumber`,
-      message: `What is your office number? `,
-      validate: (data) => {
-        if (data) {
-          return true;
-        } else {
-          return "You must enter information to continue";
-        }
-      },
-    },
-  ])
+    .prompt([
+        {
+            type: `input`,
+            name: `mgrname`,
+            message: `What is your name? `,
+            validate: (data) => {
+                if (data) {
+                    return true;
+                } else {
+                    return "You must enter information to continue";
+                }
+            },
+        },
+        {
+            type: `input`,
+            name: `mgrid`,
+            message: `What is your id#? `,
+            validate: (data) => {
+                if (data) {
+                    return true;
+                } else {
+                    return "You must enter information to continue";
+                }
+            },
+        },
+        {
+            type: `input`,
+            name: `mgremail`,
+            message: `What is your email address? `,
+            validate: (data) => {
+                if (data) {
+                    return true;
+                } else {
+                    return "You must enter information to continue";
+                }
+            },
+        },
+        {
+            type: `input`,
+            name: `officenumber`,
+            message: `What is your office number? `,
+            validate: (data) => {
+                if (data) {
+                    return true;
+                } else {
+                    return "You must enter information to continue";
+                }
+            },
+        },
+    ])
 
-  // see if i can create just 1 mgr card to start
-  .then((answers) => {
-    const newManager = new Manager(
-      answers.mgrname,
-      answers.mgrid,
-      answers.mgremail,
-      answers.officenumber
-    );
-    newHire.push(newManager);
-    menu();
-  });
+    // see if i can create just 1 mgr card to start
+    .then((answers) => {
+        const newManager = new Manager(
+            answers.mgrname,
+            answers.mgrid,
+            answers.mgremail,
+            answers.officenumber
+        );
+        newHire.push(newManager);
+        menu();
+    });
 
 // functions for newhires
 function newEngineer() {
-  inquirer
-    .prompt([
-      {
-        type: `input`,
-        name: `engname`,
-        message: `What is your name? `,
-        validate: (data) => {
-          if (data) {
-            return true;
-          } else {
-            return "You must enter information to continue";
-          }
-        },
-      },
-      {
-        type: `input`,
-        name: `engid`,
-        message: `What is your id#? `,
-        validate: (data) => {
-          if (data) {
-            return true;
-          } else {
-            return "You must enter information to continue";
-          }
-        },
-      },
-      {
-        type: `input`,
-        name: `engemail`,
-        message: `What is your email address? `,
-        validate: (data) => {
-          if (data) {
-            return true;
-          } else {
-            return "You must enter information to continue";
-          }
-        },
-      },
-      {
-        type: "input",
-        name: "github",
-        message: "What is your github user name?",
-        validate: (data) => {
-          if (data) {
-            return true;
-          } else {
-            return "You must enter information to continue";
-          }
-        },
-      },
-    ])
-    .then((answers) => {
-      const newEngineer = new Engineer(
-        answers.engname,
-        answers.engid,
-        answers.engemail,
-        answers.github
-      );
-      newHire.push(newEngineer);
-      menu();
-    });
+    inquirer
+        .prompt([
+            {
+                type: `input`,
+                name: `engname`,
+                message: `What is your name? `,
+                validate: (data) => {
+                    if (data) {
+                        return true;
+                    } else {
+                        return "You must enter information to continue";
+                    }
+                },
+            },
+            {
+                type: `input`,
+                name: `engid`,
+                message: `What is your id#? `,
+                validate: (data) => {
+                    if (data) {
+                        return true;
+                    } else {
+                        return "You must enter information to continue";
+                    }
+                },
+            },
+            {
+                type: `input`,
+                name: `engemail`,
+                message: `What is your email address? `,
+                validate: (data) => {
+                    if (data) {
+                        return true;
+                    } else {
+                        return "You must enter information to continue";
+                    }
+                },
+            },
+            {
+                type: "input",
+                name: "github",
+                message: "What is your github user name?",
+                validate: (data) => {
+                    if (data) {
+                        return true;
+                    } else {
+                        return "You must enter information to continue";
+                    }
+                },
+            },
+        ])
+        .then((answers) => {
+            const newEngineer = new Engineer(
+                answers.engname,
+                answers.engid,
+                answers.engemail,
+                answers.github
+            );
+            newHire.push(newEngineer);
+            menu();
+        });
 }
 
 function newIntern() {
     inquirer
-    .prompt([
-      {
-        type: `input`,
-        name: `intname`,
-        message: `What is your name? `,
-        validate: (data) => {
-          if (data) {
-            return true;
-          } else {
-            return "You must enter information to continue";
-          }
-        },
-      },
-      {
-        type: `input`,
-        name: `intid`,
-        message: `What is your id#? `,
-        validate: (data) => {
-          if (data) {
-            return true;
-          } else {
-            return "You must enter information to continue";
-          }
-        },
-      },
-      {
-        type: `input`,
-        name: `intemail`,
-        message: `What is your email address? `,
-        validate: (data) => {
-          if (data) {
-            return true;
-          } else {
-            return "You must enter information to continue";
-          }
-        },
-      },
-      {
-        type: "input",
-        name: "school",
-        message: "What school did you attend?",
-        validate: (data) => {
-          if (data) {
-            return true;
-          } else {
-            return "You must enter information to continue";
-          }
-        },
-      },
-    ])
-    .then((answers) => {
-      const newIntern = new Intern(
-        answers.intname,
-        answers.intid,
-        answers.intemail,
-        answers.school
-      );
-      newHire.push(newIntern);
-      menu();
-    });
+        .prompt([
+            {
+                type: `input`,
+                name: `intname`,
+                message: `What is your name? `,
+                validate: (data) => {
+                    if (data) {
+                        return true;
+                    } else {
+                        return "You must enter information to continue";
+                    }
+                },
+            },
+            {
+                type: `input`,
+                name: `intid`,
+                message: `What is your id#? `,
+                validate: (data) => {
+                    if (data) {
+                        return true;
+                    } else {
+                        return "You must enter information to continue";
+                    }
+                },
+            },
+            {
+                type: `input`,
+                name: `intemail`,
+                message: `What is your email address? `,
+                validate: (data) => {
+                    if (data) {
+                        return true;
+                    } else {
+                        return "You must enter information to continue";
+                    }
+                },
+            },
+            {
+                type: "input",
+                name: "school",
+                message: "What school did you attend?",
+                validate: (data) => {
+                    if (data) {
+                        return true;
+                    } else {
+                        return "You must enter information to continue";
+                    }
+                },
+            },
+        ])
+        .then((answers) => {
+            const newIntern = new Intern(
+                answers.intname,
+                answers.intid,
+                answers.intemail,
+                answers.school
+            );
+            newHire.push(newIntern);
+            menu();
+        });
 
 }
 
 function buildTeam() {
     console.log(newHire);
-  const managerContent = generateHTML();
+    const managerContent = generateHTML();
     console.log(managerContent);
-  fs.writeFile("index.html", managerContent, "UTF-8", (err) =>
-    err ? console.log(err) : console.log("Successfully created HTML file")
-  );
+    fs.writeFile("index.html", managerContent, "UTF-8", (err) =>
+        err ? console.log(err) : console.log("Successfully created HTML file")
+    );
 }
 
 function menu() {
     inquirer
-    .prompt([
-      {
-        type: `list`,
-        name: `menu`,
-        message: `From the options listed below, please choose how to proceed `,
-        choices: [
-          "Add an engineer",
-          "Add an intern",
-          "Finish building my team",
-        ],
-      },
-    ])
-    .then((answers) => {
-      if (answers.menu === "Add an engineer") {
-        newEngineer();
-      } else if (answers.menu === "Add an intern") {
-        newIntern();
-      } else {
-        buildTeam();
-      }
-    });
+        .prompt([
+            {
+                type: `list`,
+                name: `menu`,
+                message: `From the options listed below, please choose how to proceed `,
+                choices: [
+                    "Add an engineer",
+                    "Add an intern",
+                    "Finish building my team",
+                ],
+            },
+        ])
+        .then((answers) => {
+            if (answers.menu === "Add an engineer") {
+                newEngineer();
+            } else if (answers.menu === "Add an intern") {
+                newIntern();
+            } else {
+                buildTeam();
+            }
+        });
 
 }
