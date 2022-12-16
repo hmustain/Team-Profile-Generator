@@ -10,6 +10,11 @@
 }
 
 
+.card .card-action:last-child {
+    border-radius: 20px;
+}
+
+
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: var(--secondary);
     margin-right: 24px;
@@ -66,4 +71,5 @@
 
 .card .card-action {
   background-color: #f0f0f0;
+  border-radius: 20px;
 }
