@@ -4,6 +4,7 @@ const fs = require(`fs`);
 const Engineer = require(`./lib/engineer`);
 const Intern = require(`./lib/intern`);
 const Manager = require(`./lib/manager`);
+const { renderIcon } = require("./src/generateIcon");
 
 // Empty array for newHire
 const newHire = [];
@@ -25,7 +26,7 @@ function employeeCards(employee) {
       <div class="card-content emp-title">
         <span class="card-title emp-name">${employee.name}</span>
         <ul>
-          <li id="emp-pos">${employee.getRole()}</li>
+        <li><i class=${renderIcon()}id="emp-pos">${employee.getRole()}</i></li>
         </ul>
       </div>
       <div class="card-action emp-info">
@@ -67,6 +68,7 @@ const generateHTML = () => {
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> 
     <link rel="stylesheet" href="./dist/style.css" />
     <title>Team Profile Generator</title>
   </head>
@@ -313,3 +315,4 @@ function menu() {
         });
 
 }
+
