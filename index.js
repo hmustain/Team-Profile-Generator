@@ -20,7 +20,7 @@ function employeeCards(employee) {
     else if (employee.getRole() === "Intern") {
         extraInfo += "School: " + employee.school
     }
-    return `        <div class="col s12 m4 l4">
+    return `        <div class="col s12 m6 l4">
     <div class="card emp-card">
       <div class="card-content emp-title">
         <span class="card-title emp-name">${employee.name}</span>
