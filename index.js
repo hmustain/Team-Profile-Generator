@@ -10,6 +10,11 @@ const Manager = require(`./lib/manager`);
 const newHire = [];
 
 // function for cards <--- tutor helped me big time here
+// extraInfo will be the additional question based of job title starts off as empty string
+// icon will be the icon that goes next to job title, dependant on job title, starts out as empty
+// if statement saying if the employee role is manager then add the users office number to extraInfo and put the manager icon next to manager (this practice continues through the remaining 2 job titles)
+// once the if statements are done you we are going to return the template for my html using string templates to place the dynamically created information in the correct spots
+
 function employeeCards(employee) {
     let extraInfo = "";
     let icon = "";
@@ -46,6 +51,12 @@ function employeeCards(employee) {
 }
 
 // Create an array of questions for user input using inquirer prompt. Again went back to prev homework on readme generator for guidance.
+// creating a for loop for the generateHTML function
+// cards is what all the information will go into
+// start with empty string
+// increase newHire by 1 every time
+// if newHire role is manager we are going to add that role to employee cards and increase the cards by 1 and so on and so forth
+// once we loop and run through the if statements we are dynamically placing these cards using template literals in the html template below
 const generateHTML = () => {
     let cards = "";
     for (let i = 0; i < newHire.length; i++) {
@@ -86,7 +97,7 @@ const generateHTML = () => {
 </html>
 `;
 };
-// use inquirer prompt to come up with a series of questions to ask user
+// use inquirer prompt to come up with a series of questions to ask user first list of questions is always the manager
 inquirer
     .prompt([
         {
@@ -140,6 +151,7 @@ inquirer
     ])
 
     // see if i can create just 1 mgr card to start
+    // once manager questions are done we are going to take those answers and apply them to the const new Manger we will initiate the menu() function when done to allow the user to select what they want to do next
     .then((answers) => {
         const newManager = new Manager(
             answers.mgrname,
@@ -151,7 +163,7 @@ inquirer
         menu();
     });
 
-// functions for newhires
+// functions for newhires first being engineer. if user selects engineer they will be prompted with the below series of questions and again the menu() function is executed when the questions are done. we also push the answers into the newEngineer const
 function newEngineer() {
     inquirer
         .prompt([
@@ -216,6 +228,7 @@ function newEngineer() {
         });
 }
 
+// same thing for manager and engineer, if user selects intern, the series of questions for intern are asked, answers pushed into new const newEngineer and menu() executed again. this process will happen over and over and over again until the user selects build team
 function newIntern() {
     inquirer
         .prompt([
@@ -280,6 +293,7 @@ function newIntern() {
         });
 }
 
+// once user is finished building team, and selects finish building team, the code is going to take all of the answers and create a managerContent const and execute the generateHTML function that we built earlier in the code. this will write the file as an index.html function taking everything in managerContent (this could have been called something different but i never changed it after just 1st getting the manger to work). If it works, you will get the message "successfully created HTML file, if it does not work you will get an error"
 function buildTeam() {
     console.log(newHire);
     const managerContent = generateHTML();
@@ -289,6 +303,7 @@ function buildTeam() {
     );
 }
 
+// menu function created below, will be called after the end of each series of questions. Simple prompt to ask the user what they would like to do next with an if statement calling which particular function to execute based off of what the user selects
 function menu() {
     inquirer
         .prompt([
