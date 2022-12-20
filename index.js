@@ -92,7 +92,7 @@ inquirer
         {
             type: `input`,
             name: `mgrname`,
-            message: `What is your name? `,
+            message: `What is the manager's name? `,
             validate: (data) => {
                 if (data) {
                     return true;
@@ -104,7 +104,7 @@ inquirer
         {
             type: `input`,
             name: `mgrid`,
-            message: `What is your id#? `,
+            message: `What is the manager's employee id#? `,
             validate: (data) => {
                 if (data) {
                     return true;
@@ -116,7 +116,7 @@ inquirer
         {
             type: `input`,
             name: `mgremail`,
-            message: `What is your email address? `,
+            message: `What is the manager's email address? `,
             validate: (data) => {
                 if (data) {
                     return true;
@@ -128,7 +128,7 @@ inquirer
         {
             type: `input`,
             name: `officenumber`,
-            message: `What is your office number? `,
+            message: `What is the manager's office number? `,
             validate: (data) => {
                 if (data) {
                     return true;
@@ -158,7 +158,7 @@ function newEngineer() {
             {
                 type: `input`,
                 name: `engname`,
-                message: `What is your name? `,
+                message: `What is the engineer's name? `,
                 validate: (data) => {
                     if (data) {
                         return true;
@@ -170,7 +170,7 @@ function newEngineer() {
             {
                 type: `input`,
                 name: `engid`,
-                message: `What is your id#? `,
+                message: `What is the engineer's employee id#? `,
                 validate: (data) => {
                     if (data) {
                         return true;
@@ -182,7 +182,7 @@ function newEngineer() {
             {
                 type: `input`,
                 name: `engemail`,
-                message: `What is your email address? `,
+                message: `What is the engineer's email address? `,
                 validate: (data) => {
                     if (data) {
                         return true;
@@ -194,7 +194,7 @@ function newEngineer() {
             {
                 type: "input",
                 name: "github",
-                message: "What is your github user name?",
+                message: "What is the engineer's github user name?",
                 validate: (data) => {
                     if (data) {
                         return true;
@@ -222,7 +222,7 @@ function newIntern() {
             {
                 type: `input`,
                 name: `intname`,
-                message: `What is your name? `,
+                message: `What is the intern's name? `,
                 validate: (data) => {
                     if (data) {
                         return true;
@@ -234,7 +234,7 @@ function newIntern() {
             {
                 type: `input`,
                 name: `intid`,
-                message: `What is your id#? `,
+                message: `What is the intern's employee id#? `,
                 validate: (data) => {
                     if (data) {
                         return true;
@@ -246,7 +246,7 @@ function newIntern() {
             {
                 type: `input`,
                 name: `intemail`,
-                message: `What is your email address? `,
+                message: `What is the intern's email address? `,
                 validate: (data) => {
                     if (data) {
                         return true;
@@ -258,7 +258,7 @@ function newIntern() {
             {
                 type: "input",
                 name: "school",
-                message: "What school did you attend?",
+                message: "What school did the intern attend?",
                 validate: (data) => {
                     if (data) {
                         return true;
