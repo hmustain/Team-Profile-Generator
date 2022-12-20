@@ -16,7 +16,7 @@ This is a team profile generator. This application is designed to dynamically bu
 - [Questions](#questions)
 
 ## Installation
-First, you will need to make sure you have node.js installed. Once you have confirmed node.js in installed, you will need to run npm init from the terminal to create a package.json folder. After that, instal inquirer version 8.2.4 by typing npm i inquirer@8.2.4 from the CL in the terminal. You will need to make sure you are installing this project in the correct folder that you will be working out of in VS Code. Additionally, in order to run your test, you will need to make sure jest is installed. To install jest, CD into the correct folder and install jest by CL typing in npm i jest
+First, you will need to make sure you have node.js installed. Once you have confirmed node.js in installed, you will need to run npm init from the terminal to create a package.json folder. After that, install inquirer version 8.2.4 by typing npm i inquirer@8.2.4 from the CL in the terminal. You will need to make sure you are installing this project in the correct folder that you will be working out of in VS Code. Additionally, in order to run your test, you will need to make sure jest is installed. To install jest, CD into the correct folder and install jest by CL typing in npm i jest
 
 ## Usage
 To run this application, you will need to CD into the correct folder in VS Code and run node + the title of your JS folder. For instance node index.js
@@ -42,7 +42,7 @@ https://opensource.org/licenses/MIT
         
 
 ## Tests
-There are 4 test suites that can be run and a total of () tests. To run the tests, make sure you are in the correct folder in VS code  and run your tests by typing npm run test in the CL in VS Code.
+There are 4 test suites that can be run and a total of 23 tests. To run the tests, make sure you are in the correct folder in VS code  and run your tests by typing npm run test in the CL in VS Code.
 
 ## Questions
 If you have questions and would like to email me please email me @ hunter@bunkerbranding.com <br>
