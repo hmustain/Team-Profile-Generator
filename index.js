@@ -21,7 +21,7 @@ function employeeCards(employee) {
         icon += `fas fa-glasses' style="font-size: 20px; color:#0c2340"`;
     } else if (employee.getRole() === "Intern") {
         extraInfo += "School: " + employee.school
-        icon += `fas fa-graduate' style="font-size: 20px; color:#0c2340"`;
+        icon += `fa fa-graduation-cap' style="font-size: 20px; color:#0c2340"`;
     }
     return `        <div class="col s12 m6 l4">
     <div class="card emp-card">
