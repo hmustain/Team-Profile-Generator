@@ -21,6 +21,10 @@ First, you will need to make sure you have node.js installed. Once you have conf
 ## Usage
 To run this application, you will need to CD into the correct folder in VS Code and run node + the title of your JS folder. For instance node index.js
 
+To see how this application is used, please watch the video below
+
+https://www.loom.com/share/b7ca1ef230a4446085c7430d51839a6f
+
 ## Credits
 Hunter Mustain, along with all of our class TAs and the instructor. Also credit official documentation from MDN & W3 schools, as well as youtube videos.
 
