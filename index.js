@@ -4,29 +4,31 @@ const fs = require(`fs`);
 const Engineer = require(`./lib/engineer`);
 const Intern = require(`./lib/intern`);
 const Manager = require(`./lib/manager`);
-const { renderIcon } = require("./src/generateIcon");
+// const { renderIcon } = require("./src/generateIcon");
 
 // Empty array for newHire
 const newHire = [];
 
 // function for cards <--- tutor helped me big time here
 function employeeCards(employee) {
-    let extraInfo = ""
+    let extraInfo = "";
+    let icon = "";
     if (employee.getRole() === "Manager") {
         extraInfo += "Office Number: " + employee.officeNumber
-    }
-    else if (employee.getRole() === "Engineer") {
+        icon += `fas fa-coffee' style="font-size: 20px; color:#0c2340"`;
+    } else if (employee.getRole() === "Engineer") {
         extraInfo += `GitHub User: <a href="https://www.github.com/${employee.gitHub}">${employee.gitHub}</a>`
-    }
-    else if (employee.getRole() === "Intern") {
+        icon += `fas fa-glasses' style="font-size: 20px; color:#0c2340"`;
+    } else if (employee.getRole() === "Intern") {
         extraInfo += "School: " + employee.school
+        icon += `fas fa-graduate' style="font-size: 20px; color:#0c2340"`;
     }
     return `        <div class="col s12 m6 l4">
     <div class="card emp-card">
       <div class="card-content emp-title">
         <span class="card-title emp-name">${employee.name}</span>
         <ul>
-        <li><i class=${renderIcon()}id="emp-pos">${employee.getRole()}</i></li>
+        <li><i class='${icon}' id="emp-pos"> ${employee.getRole()}</i></li>
         </ul>
       </div>
       <div class="card-action emp-info">
@@ -40,21 +42,19 @@ function employeeCards(employee) {
       </div>
     </div>
   </div>
-`
+`;
 }
 
 // Create an array of questions for user input using inquirer prompt. Again went back to prev homework on readme generator for guidance.
 const generateHTML = () => {
-    let cards = ""
+    let cards = "";
     for (let i = 0; i < newHire.length; i++) {
         if (newHire[i].getRole() === "Manager") {
-            cards += employeeCards(newHire[i])
-        }
-        else if (newHire[i].getRole() === "Engineer") {
-            cards += employeeCards(newHire[i])
-        }
-        else if (newHire[i].getRole() === "Intern") {
-            cards += employeeCards(newHire[i])
+            cards += employeeCards(newHire[i]);
+        } else if (newHire[i].getRole() === "Engineer") {
+            cards += employeeCards(newHire[i]);
+        } else if (newHire[i].getRole() === "Intern") {
+            cards += employeeCards(newHire[i]);
         }
     }
     return `<!DOCTYPE html>
@@ -85,7 +85,7 @@ const generateHTML = () => {
   </body>
 </html>
 `;
-}
+};
 // use inquirer prompt to come up with a series of questions to ask user
 inquirer
     .prompt([
@@ -278,7 +278,6 @@ function newIntern() {
             newHire.push(newIntern);
             menu();
         });
-
 }
 
 function buildTeam() {
@@ -313,6 +312,4 @@ function menu() {
                 buildTeam();
             }
         });
-
 }
-
